@@ -1,0 +1,60 @@
+﻿@model IEnumerable<CLOB.ViewModels.PostObservationVM>
+@{
+    ViewBag.Title = "ScienceContent";
+}
+<style>
+    .panel
+    {
+         min-width:auto;
+         width:60%;
+    }
+</style>
+
+@RenderPage("~/Views/Shared/_Menu1.cshtml", "Science Content")
+<div class="container-fluid">
+<h2>ScienceContent</h2>
+
+@using (Html.BeginForm())
+{
+
+    
+    @Html.Hidden("POQType", (object) ViewBag.POQType)
+<div class="panel">
+
+
+     LIFE SCIENCES
+
+     @{
+     foreach (var o in Model)
+     {
+         if (o.SubSection == "1")
+         {
+             <div class="checkbox">
+                <label>@Html.CheckBox("a" + o.POQID.ToString(), o.AnswerValue) @o.QuestionText </label>
+             </div>
+         }
+     }
+            
+    }
+
+    
+    @{
+     foreach (var o in Model)
+     {
+         if (o.QuestionType == "text")
+         {
+             <div class="form-group">
+                <label for="Notes">Additional Notes</label>
+                    @Html.TextArea("a" + o.POQID.ToString(),o.Answer , new { @class = "form-control" })
+            </div>
+         }
+     }
+            
+    }
+    
+</div>
+
+  <input id="Submit1" class="btn btn-primary" type="submit" value="Save" />
+     <br /><br />
+}
+    </div>

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<CLOB.ViewModels.PostObservationVM>
+@{
+    ViewBag.Title = "TeacherDirected";
+}
+<style>
+    .panel
+    {
+         min-width:auto;
+         width:60%;
+    }
+</style>
+@RenderPage("~/Views/Shared/_Menu1.cshtml", "Teacher Directed")
+<div class="container-fluid">
+<h2>Teacher Directed</h2>
+
+@using (Html.BeginForm())
+{
+
+@Html.Hidden("POQType", (object) ViewBag.POQType)    
+<br /><br />
+
+<div class="panel">
+
+     QUESTIONING/EXPLORATION
+     @{
+     foreach (var o in Model)
+     {
+         if (o.SubSection == "1")
+         {
+             <div class="checkbox">
+                <label>@Html.CheckBox("a" + o.POQID.ToString(), o.AnswerValue) @o.QuestionText </label>
+             </div>
+         }
+     }
+            
+    }
+   
+   
+    <br />
+    DESIGN
+
+   @{
+     foreach (var o in Model)
+     {
+         if (o.SubSection == "2")
+         {
+             <div class="checkbox">
+                <label>@Html.CheckBox("a" + o.POQID.ToString(), o.AnswerValue) @o.QuestionText </label>
+             </div>
+         }
+     }
+            
+    }
+
+@{
+     foreach (var o in Model)
+     {
+         if (o.QuestionType == "text")
+         {
+             <div class="form-group">
+                <label for="Notes">Additional Notes</label>
+                   @Html.TextArea("a" + o.POQID.ToString(),o.Answer , new { @class = "form-control" })
+            </div>
+         }
+     }
+            
+    }
+
+</div>
+
+  <input id="Submit1" class="btn btn-primary" type="submit" value="Save" />
+     <br /><br />
+}
+</div>

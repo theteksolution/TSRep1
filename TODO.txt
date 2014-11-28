@@ -1,0 +1,33 @@
+﻿-- 10182014
+
+Admin portal 
+- configure questions
+  - These static
+  Background info
+  Observation detail
+
+  - configure
+  Student directed
+  teacher directed
+  Leadership
+  Science content
+  - add
+  History
+  English
+  Math
+  
+  Admin portal: 
+               add/edit question
+			   active/inactive
+			   Type
+			   section/section header 
+
+
+- toggle components
+
+Offline Database
+- Browser/html etc
+- Sync data
+
+  html5 local storage
+

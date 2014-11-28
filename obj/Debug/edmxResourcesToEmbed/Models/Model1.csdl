@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CLOBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="CLOBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CLOB_ErrorLog" EntityType="CLOBModel.CLOB_ErrorLog" />
+    <EntitySet Name="CLOB_ObservationBackground" EntityType="CLOBModel.CLOB_ObservationBackground" />
+    <EntitySet Name="CLOB_ObservationInformation" EntityType="CLOBModel.CLOB_ObservationInformation" />
+    <EntitySet Name="CLOB_ObservationsAnswers" EntityType="CLOBModel.CLOB_ObservationsAnswers" />
+    <EntitySet Name="CLOB_Observers" EntityType="CLOBModel.CLOB_Observers" />
+    <EntitySet Name="CLOB_PostObservationQuestions" EntityType="CLOBModel.CLOB_PostObservationQuestions" />
+    <FunctionImport Name="GetObservationInfoCounts" ReturnType="Collection(CLOBModel.GetObservationInfoCounts_Result)" />
+  </EntityContainer>
+  <EntityType Name="CLOB_ErrorLog">
+    <Key>
+      <PropertyRef Name="ErrorID" />
+    </Key>
+    <Property Name="ErrorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ErrorSource" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="ErrorMessage" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="DateAdded" Type="DateTime" Precision="3" />
+    <Property Name="UserID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CLOB_ObservationBackground">
+    <Key>
+      <PropertyRef Name="ObservationID" />
+    </Key>
+    <Property Name="ObservationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="StartingNumberOfFemales" Type="Int32" />
+    <Property Name="EndingNumberOfFemales" Type="Int32" />
+    <Property Name="StartingNumberOfMales" Type="Int32" />
+    <Property Name="EndingNumberOfMales" Type="Int32" />
+    <Property Name="ObtainedArtifactsCopy" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="UseInstructionalArtifacts" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="ClassID" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ObservationDate" Type="DateTime" Precision="3" />
+    <Property Name="ClassStartTime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ClassEndTime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="DateAdded" Type="DateTime" Precision="3" />
+    <Property Name="LastEdit" Type="DateTime" Precision="3" />
+    <Property Name="SyncDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CLOB_ObservationInformation">
+    <Key>
+      <PropertyRef Name="ObservationInformationID" />
+    </Key>
+    <Property Name="ObservationInformationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ObservationID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="LessonEventName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="AcknowledgeCount" Type="Int32" />
+    <Property Name="SolicitCount" Type="Int32" />
+    <Property Name="ApplyCount" Type="Int32" />
+    <Property Name="CorrectCount" Type="Int32" />
+    <Property Name="DirectionsCount" Type="Int32" />
+    <Property Name="ExplainCount" Type="Int32" />
+    <Property Name="FactsCount" Type="Int32" />
+    <Property Name="ForeshadowCount" Type="Int32" />
+    <Property Name="GiveInfoCount" Type="Int32" />
+    <Property Name="ItineraryCount" Type="Int32" />
+    <Property Name="MetaCount" Type="Int32" />
+    <Property Name="NewAndOldCount" Type="Int32" />
+    <Property Name="PraiseCount" Type="Int32" />
+    <Property Name="ProceduralCount" Type="Int32" />
+    <Property Name="ReflectCount" Type="Int32" />
+    <Property Name="RephraseCount" Type="Int32" />
+    <Property Name="SituateCount" Type="Int32" />
+    <Property Name="SuggestCount" Type="Int32" />
+    <Property Name="SummarizeCount" Type="Int32" />
+    <Property Name="ThinkAloudCount" Type="Int32" />
+    <Property Name="ClassActivityCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ClassOrganizationCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="StudentDisengagementCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DateAdded" Type="DateTime" Precision="3" />
+    <Property Name="LastEdit" Type="DateTime" Precision="3" />
+    <Property Name="SyncDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CLOB_ObservationsAnswers">
+    <Key>
+      <PropertyRef Name="ObservationAnswersID" />
+    </Key>
+    <Property Name="ObservationAnswersID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ObservationID" Type="Int32" Nullable="false" />
+    <Property Name="POQID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="POQType" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Answer" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="DateAdded" Type="DateTime" Precision="3" />
+    <Property Name="LastEdit" Type="DateTime" Precision="3" />
+    <Property Name="SyncDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CLOB_Observers">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="UserID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="FirstName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="DeviceIdentifier" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="DateAdded" Type="DateTime" Precision="3" />
+    <Property Name="SyncDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CLOB_PostObservationQuestions">
+    <Key>
+      <PropertyRef Name="POQID" />
+    </Key>
+    <Property Name="POQID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Active" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="POQType" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SubSection" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="QuestionText" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="QuestionType" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DisplayOrder" Type="Int32" />
+    <Property Name="DateAdded" Type="DateTime" Precision="3" />
+    <Property Name="AddedBy" Type="Int32" />
+    <Property Name="LastEdit" Type="DateTime" Precision="3" />
+    <Property Name="EditedBy" Type="Int32" />
+  </EntityType>
+  <ComplexType Name="GetObservationInfoCounts_Result">
+    <Property Type="Int32" Name="AcknowledgeCount" Nullable="true" />
+    <Property Type="Int32" Name="SolicitCount" Nullable="true" />
+    <Property Type="Int32" Name="ApplyCount" Nullable="true" />
+    <Property Type="Int32" Name="CorrectCount" Nullable="true" />
+    <Property Type="Int32" Name="DirectionsCount" Nullable="true" />
+    <Property Type="Int32" Name="ExplainCount" Nullable="true" />
+    <Property Type="Int32" Name="FactsCount" Nullable="true" />
+    <Property Type="Int32" Name="ForeshadowCount" Nullable="true" />
+    <Property Type="Int32" Name="GiveInfoCount" Nullable="true" />
+    <Property Type="Int32" Name="ItineraryCount" Nullable="true" />
+    <Property Type="Int32" Name="MetaCount" Nullable="true" />
+    <Property Type="Int32" Name="NewAndOldCount" Nullable="true" />
+    <Property Type="Int32" Name="PraiseCount" Nullable="true" />
+    <Property Type="Int32" Name="ProceduralCount" Nullable="true" />
+    <Property Type="Int32" Name="ReflectCount" Nullable="true" />
+    <Property Type="Int32" Name="RephraseCount" Nullable="true" />
+    <Property Type="Int32" Name="SituateCount" Nullable="true" />
+    <Property Type="Int32" Name="SuggestCount" Nullable="true" />
+    <Property Type="Int32" Name="SummarizeCount" Nullable="true" />
+    <Property Type="Int32" Name="ThinkAloudCount" Nullable="true" />
+  </ComplexType>
+</Schema>

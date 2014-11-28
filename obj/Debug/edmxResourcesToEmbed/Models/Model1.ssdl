@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CLOBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="CLOBModelStoreContainer">
+    <EntitySet Name="CLOB_ErrorLog" EntityType="CLOBModel.Store.CLOB_ErrorLog" store:Type="Tables" store:Schema="dbo" store:Name="CLOB_ErrorLog">
+      <DefiningQuery>SELECT 
+      [CLOB_ErrorLog].[ErrorID] AS [ErrorID], 
+      [CLOB_ErrorLog].[ErrorSource] AS [ErrorSource], 
+      [CLOB_ErrorLog].[ErrorMessage] AS [ErrorMessage], 
+      [CLOB_ErrorLog].[DateAdded] AS [DateAdded], 
+      [CLOB_ErrorLog].[UserID] AS [UserID]
+      FROM [dbo].[CLOB_ErrorLog] AS [CLOB_ErrorLog]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CLOB_ObservationBackground" EntityType="CLOBModel.Store.CLOB_ObservationBackground" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CLOB_ObservationInformation" EntityType="CLOBModel.Store.CLOB_ObservationInformation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CLOB_ObservationsAnswers" EntityType="CLOBModel.Store.CLOB_ObservationsAnswers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CLOB_Observers" EntityType="CLOBModel.Store.CLOB_Observers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CLOB_PostObservationQuestions" EntityType="CLOBModel.Store.CLOB_PostObservationQuestions" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CLOB.dbo.CLOB_ErrorLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="CLOB_ErrorLog">
+    <Key>
+      <PropertyRef Name="ErrorID" />
+    </Key>
+    <Property Name="ErrorID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ErrorSource" Type="varchar" MaxLength="150" />
+    <Property Name="ErrorMessage" Type="varchar" MaxLength="2000" />
+    <Property Name="DateAdded" Type="datetime" />
+    <Property Name="UserID" Type="int" />
+  </EntityType>
+  <EntityType Name="CLOB_ObservationBackground">
+    <Key>
+      <PropertyRef Name="ObservationID" />
+    </Key>
+    <Property Name="ObservationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="varchar" MaxLength="150" />
+    <Property Name="StartingNumberOfFemales" Type="int" />
+    <Property Name="EndingNumberOfFemales" Type="int" />
+    <Property Name="StartingNumberOfMales" Type="int" />
+    <Property Name="EndingNumberOfMales" Type="int" />
+    <Property Name="ObtainedArtifactsCopy" Type="varchar" MaxLength="10" />
+    <Property Name="UseInstructionalArtifacts" Type="varchar" MaxLength="10" />
+    <Property Name="ClassID" Type="varchar" MaxLength="100" />
+    <Property Name="ObservationDate" Type="datetime" />
+    <Property Name="ClassStartTime" Type="varchar" MaxLength="50" />
+    <Property Name="ClassEndTime" Type="varchar" MaxLength="50" />
+    <Property Name="Notes" Type="varchar" MaxLength="4000" />
+    <Property Name="DateAdded" Type="datetime" />
+    <Property Name="LastEdit" Type="datetime" />
+    <Property Name="SyncDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CLOB_ObservationInformation">
+    <Key>
+      <PropertyRef Name="ObservationInformationID" />
+    </Key>
+    <Property Name="ObservationInformationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ObservationID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="LessonEventName" Type="varchar" MaxLength="100" />
+    <Property Name="AcknowledgeCount" Type="int" />
+    <Property Name="SolicitCount" Type="int" />
+    <Property Name="ApplyCount" Type="int" />
+    <Property Name="CorrectCount" Type="int" />
+    <Property Name="DirectionsCount" Type="int" />
+    <Property Name="ExplainCount" Type="int" />
+    <Property Name="FactsCount" Type="int" />
+    <Property Name="ForeshadowCount" Type="int" />
+    <Property Name="GiveInfoCount" Type="int" />
+    <Property Name="ItineraryCount" Type="int" />
+    <Property Name="MetaCount" Type="int" />
+    <Property Name="NewAndOldCount" Type="int" />
+    <Property Name="PraiseCount" Type="int" />
+    <Property Name="ProceduralCount" Type="int" />
+    <Property Name="ReflectCount" Type="int" />
+    <Property Name="RephraseCount" Type="int" />
+    <Property Name="SituateCount" Type="int" />
+    <Property Name="SuggestCount" Type="int" />
+    <Property Name="SummarizeCount" Type="int" />
+    <Property Name="ThinkAloudCount" Type="int" />
+    <Property Name="ClassActivityCode" Type="varchar" MaxLength="50" />
+    <Property Name="ClassOrganizationCode" Type="varchar" MaxLength="50" />
+    <Property Name="Notes" Type="varchar" MaxLength="4000" />
+    <Property Name="StudentDisengagementCode" Type="varchar" MaxLength="50" />
+    <Property Name="DateAdded" Type="datetime" />
+    <Property Name="LastEdit" Type="datetime" />
+    <Property Name="SyncDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CLOB_ObservationsAnswers">
+    <Key>
+      <PropertyRef Name="ObservationAnswersID" />
+    </Key>
+    <Property Name="ObservationAnswersID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ObservationID" Type="int" Nullable="false" />
+    <Property Name="POQID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="POQType" Type="varchar" MaxLength="50" />
+    <Property Name="Answer" Type="varchar" MaxLength="1000" />
+    <Property Name="DateAdded" Type="datetime" />
+    <Property Name="LastEdit" Type="datetime" />
+    <Property Name="SyncDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CLOB_Observers">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="UserID" Type="varchar" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" />
+    <Property Name="DeviceIdentifier" Type="varchar" MaxLength="100" />
+    <Property Name="DateAdded" Type="datetime" />
+    <Property Name="SyncDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CLOB_PostObservationQuestions">
+    <Key>
+      <PropertyRef Name="POQID" />
+    </Key>
+    <Property Name="POQID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Active" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="POQType" Type="varchar" MaxLength="50" />
+    <Property Name="SubSection" Type="varchar" MaxLength="50" />
+    <Property Name="QuestionText" Type="varchar" MaxLength="500" />
+    <Property Name="QuestionType" Type="varchar" MaxLength="50" />
+    <Property Name="DisplayOrder" Type="int" />
+    <Property Name="DateAdded" Type="datetime" />
+    <Property Name="AddedBy" Type="int" />
+    <Property Name="LastEdit" Type="datetime" />
+    <Property Name="EditedBy" Type="int" />
+  </EntityType>
+  <Function Name="GetObservationInfoCounts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+</Schema>

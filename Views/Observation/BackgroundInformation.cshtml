@@ -1,0 +1,88 @@
+﻿@model CLOB.ViewModels.BackgroundInformationVM
+
+@{
+    ViewBag.Title = "BackgroundInformation";
+}
+<style>
+    .form-control {
+  min-width:auto;
+  width:50%;
+}
+
+     .table
+    {
+        width:50%;
+    }
+   
+</style>
+ <script>
+$(function() {
+    $("#ObservationDateShort").pickadate({ format: 'mm/dd/yyyy', formatSubmit: 'mm/dd/yyyy'});
+
+    $("#ClassStartTime").pickatime();
+
+    $("#ClassEndTime").pickatime();
+});
+
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}
+</script>
+@RenderPage("~/Views/Shared/_Menu1.cshtml", "Background Information")
+<div class="container-fluid">
+<h2>Background Information</h2>
+
+<br /><br />
+@using (Html.BeginForm("BackgroundInformation","Observation"))
+{
+    @Html.Hidden("ObservationID",Model.ObservationID) 
+     <div class="form-group">
+        <label for="ObservationDate">Observation Date</label>
+        @Html.TextBoxFor(m => m.ObservationDateShort, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label for="ClassStartTime">Class Start Time</label>
+        @Html.TextBoxFor(m => m.ClassStartTime, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label for="ClassEndTime">Class End Time</label>
+        @Html.TextBoxFor(m => m.ClassEndTime, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label for="StartingNumberOfMales">Starting Number of Males</label>
+        @Html.TextBoxFor(m => m.StartingNumberOfMales, new { @class = "form-control", onkeypress = "return isNumber(event)" })
+    </div>
+    <div class="form-group">
+        <label for="StartingNumberOfFemales">Starting Number of Females</label>
+        @Html.TextBoxFor(m => m.StartingNumberOfFemales, new { @class = "form-control", onkeypress = "return isNumber(event)" })
+    </div>
+    <div class="form-group">
+        <label for="EndingNumberOfMales">Ending Number of Males</label>
+        @Html.TextBoxFor(m => m.EndingNumberOfMales, new { @class = "form-control", onkeypress = "return isNumber(event)" })
+    </div>
+    <div class="form-group">
+        <label for="EndingNumberOfFemales">Ending Number of Females</label>
+        @Html.TextBoxFor(m => m.EndingNumberOfFemales, new { @class = "form-control", onkeypress = "return isNumber(event)" })
+    </div>
+    <div class="checkbox">
+        <label>@Html.CheckBox("UseInstructionalArtifacts", Model.UseInstructionalArtifactsValue) Did the students use instructional artifacts (e.g., handouts, worksheets, readings, etc.) in this lesson?</label>
+    </div>
+     <div class="checkbox">
+        <label>@Html.CheckBox("ObtainedArtifactsCopy", Model.ObtainedArtifactsCopyValue) Was the observer able to obtain a copy of these artifacts to use in the coding process?</label>
+    </div>
+     <div class="form-group">
+        <label for="Notes">Additional Notes</label>
+        @Html.TextAreaFor(m => m.Notes, new { @class = "form-control" })
+    </div>
+    
+    <input id="Submit1" class="btn btn-primary" type="submit" value="Save" />
+    
+       <br /><br />
+}
+
+</div>

@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CLOBModelStoreContainer" CdmEntityContainer="CLOBEntities">
+    <EntitySetMapping Name="CLOB_ErrorLog">
+      <EntityTypeMapping TypeName="CLOBModel.CLOB_ErrorLog">
+        <MappingFragment StoreEntitySet="CLOB_ErrorLog">
+          <ScalarProperty Name="ErrorID" ColumnName="ErrorID" />
+          <ScalarProperty Name="ErrorSource" ColumnName="ErrorSource" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLOB_ObservationBackground">
+      <EntityTypeMapping TypeName="CLOBModel.CLOB_ObservationBackground">
+        <MappingFragment StoreEntitySet="CLOB_ObservationBackground">
+          <ScalarProperty Name="ObservationID" ColumnName="ObservationID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="StartingNumberOfFemales" ColumnName="StartingNumberOfFemales" />
+          <ScalarProperty Name="EndingNumberOfFemales" ColumnName="EndingNumberOfFemales" />
+          <ScalarProperty Name="StartingNumberOfMales" ColumnName="StartingNumberOfMales" />
+          <ScalarProperty Name="EndingNumberOfMales" ColumnName="EndingNumberOfMales" />
+          <ScalarProperty Name="ObtainedArtifactsCopy" ColumnName="ObtainedArtifactsCopy" />
+          <ScalarProperty Name="UseInstructionalArtifacts" ColumnName="UseInstructionalArtifacts" />
+          <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+          <ScalarProperty Name="ObservationDate" ColumnName="ObservationDate" />
+          <ScalarProperty Name="ClassStartTime" ColumnName="ClassStartTime" />
+          <ScalarProperty Name="ClassEndTime" ColumnName="ClassEndTime" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="SyncDate" ColumnName="SyncDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLOB_ObservationInformation">
+      <EntityTypeMapping TypeName="CLOBModel.CLOB_ObservationInformation">
+        <MappingFragment StoreEntitySet="CLOB_ObservationInformation">
+          <ScalarProperty Name="ObservationInformationID" ColumnName="ObservationInformationID" />
+          <ScalarProperty Name="ObservationID" ColumnName="ObservationID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="LessonEventName" ColumnName="LessonEventName" />
+          <ScalarProperty Name="AcknowledgeCount" ColumnName="AcknowledgeCount" />
+          <ScalarProperty Name="SolicitCount" ColumnName="SolicitCount" />
+          <ScalarProperty Name="ApplyCount" ColumnName="ApplyCount" />
+          <ScalarProperty Name="CorrectCount" ColumnName="CorrectCount" />
+          <ScalarProperty Name="DirectionsCount" ColumnName="DirectionsCount" />
+          <ScalarProperty Name="ExplainCount" ColumnName="ExplainCount" />
+          <ScalarProperty Name="FactsCount" ColumnName="FactsCount" />
+          <ScalarProperty Name="ForeshadowCount" ColumnName="ForeshadowCount" />
+          <ScalarProperty Name="GiveInfoCount" ColumnName="GiveInfoCount" />
+          <ScalarProperty Name="ItineraryCount" ColumnName="ItineraryCount" />
+          <ScalarProperty Name="MetaCount" ColumnName="MetaCount" />
+          <ScalarProperty Name="NewAndOldCount" ColumnName="NewAndOldCount" />
+          <ScalarProperty Name="PraiseCount" ColumnName="PraiseCount" />
+          <ScalarProperty Name="ProceduralCount" ColumnName="ProceduralCount" />
+          <ScalarProperty Name="ReflectCount" ColumnName="ReflectCount" />
+          <ScalarProperty Name="RephraseCount" ColumnName="RephraseCount" />
+          <ScalarProperty Name="SituateCount" ColumnName="SituateCount" />
+          <ScalarProperty Name="SuggestCount" ColumnName="SuggestCount" />
+          <ScalarProperty Name="SummarizeCount" ColumnName="SummarizeCount" />
+          <ScalarProperty Name="ThinkAloudCount" ColumnName="ThinkAloudCount" />
+          <ScalarProperty Name="ClassActivityCode" ColumnName="ClassActivityCode" />
+          <ScalarProperty Name="ClassOrganizationCode" ColumnName="ClassOrganizationCode" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="StudentDisengagementCode" ColumnName="StudentDisengagementCode" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="SyncDate" ColumnName="SyncDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLOB_ObservationsAnswers">
+      <EntityTypeMapping TypeName="CLOBModel.CLOB_ObservationsAnswers">
+        <MappingFragment StoreEntitySet="CLOB_ObservationsAnswers">
+          <ScalarProperty Name="ObservationAnswersID" ColumnName="ObservationAnswersID" />
+          <ScalarProperty Name="ObservationID" ColumnName="ObservationID" />
+          <ScalarProperty Name="POQID" ColumnName="POQID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="POQType" ColumnName="POQType" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="SyncDate" ColumnName="SyncDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLOB_Observers">
+      <EntityTypeMapping TypeName="CLOBModel.CLOB_Observers">
+        <MappingFragment StoreEntitySet="CLOB_Observers">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DeviceIdentifier" ColumnName="DeviceIdentifier" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="SyncDate" ColumnName="SyncDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLOB_PostObservationQuestions">
+      <EntityTypeMapping TypeName="CLOBModel.CLOB_PostObservationQuestions">
+        <MappingFragment StoreEntitySet="CLOB_PostObservationQuestions">
+          <ScalarProperty Name="POQID" ColumnName="POQID" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="POQType" ColumnName="POQType" />
+          <ScalarProperty Name="SubSection" ColumnName="SubSection" />
+          <ScalarProperty Name="QuestionText" ColumnName="QuestionText" />
+          <ScalarProperty Name="QuestionType" ColumnName="QuestionType" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="LastEdit" ColumnName="LastEdit" />
+          <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetObservationInfoCounts" FunctionName="CLOBModel.Store.GetObservationInfoCounts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CLOBModel.GetObservationInfoCounts_Result">
+          <ScalarProperty Name="AcknowledgeCount" ColumnName="AcknowledgeCount" />
+          <ScalarProperty Name="SolicitCount" ColumnName="SolicitCount" />
+          <ScalarProperty Name="ApplyCount" ColumnName="ApplyCount" />
+          <ScalarProperty Name="CorrectCount" ColumnName="CorrectCount" />
+          <ScalarProperty Name="DirectionsCount" ColumnName="DirectionsCount" />
+          <ScalarProperty Name="ExplainCount" ColumnName="ExplainCount" />
+          <ScalarProperty Name="FactsCount" ColumnName="FactsCount" />
+          <ScalarProperty Name="ForeshadowCount" ColumnName="ForeshadowCount" />
+          <ScalarProperty Name="GiveInfoCount" ColumnName="GiveInfoCount" />
+          <ScalarProperty Name="ItineraryCount" ColumnName="ItineraryCount" />
+          <ScalarProperty Name="MetaCount" ColumnName="MetaCount" />
+          <ScalarProperty Name="NewAndOldCount" ColumnName="NewAndOldCount" />
+          <ScalarProperty Name="PraiseCount" ColumnName="PraiseCount" />
+          <ScalarProperty Name="ProceduralCount" ColumnName="ProceduralCount" />
+          <ScalarProperty Name="ReflectCount" ColumnName="ReflectCount" />
+          <ScalarProperty Name="RephraseCount" ColumnName="RephraseCount" />
+          <ScalarProperty Name="SituateCount" ColumnName="SituateCount" />
+          <ScalarProperty Name="SuggestCount" ColumnName="SuggestCount" />
+          <ScalarProperty Name="SummarizeCount" ColumnName="SummarizeCount" />
+          <ScalarProperty Name="ThinkAloudCount" ColumnName="ThinkAloudCount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

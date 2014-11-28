@@ -1,0 +1,134 @@
+﻿  
+
+    <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">CLOB</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+           
+        @{
+            if (PageData[0] == "Home")
+            {
+                <li class="active"><a href="#">Home</a></li>
+            }
+            else
+            {
+                <li><a href="~/Home/Index">Home</a></li>
+            }
+
+            <li class="divider-vertical"></li>
+            
+            if (PageData[0] != "Home")
+            {
+                 
+                if (PageData[0] == "Background Information")
+                {
+                    <li class="active"><a href="#">Background Information</a></li>
+                }
+                else
+                {
+                    <li><a href="~/Observation/BackgroundInformation">Background Information</a></li>
+                }  
+            
+                if (Session["NewObservation"] == null)
+                {            
+                    if (PageData[0] == "Observation Detail")
+                    {
+                        <li class="active"><a href="#">Observation Detail</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="~/Observation/ObservationDetail">Observation Detail</a></li>
+                    }  
+            
+            
+                    if (PageData[0] == "Student Directed")
+                    {
+                        <li class="active"><a href="#">Student Directed</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="~/Observation/StudentDirected">Student Directed</a></li>
+                    }
+
+
+                    if (PageData[0] == "Teacher Directed")
+                    {
+                        <li class="active"><a href="#">Teacher Directed</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="~/Observation/TeacherDirected">Teacher Directed</a></li>
+                    }
+
+                    if (PageData[0] == "Science Content")
+                    {
+                        <li class="active"><a href="#">Science Content</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="~/Observation/ScienceContent">Science Content</a></li>
+                    }
+
+                    if (PageData[0] == "Leadership Practices")
+                    {
+                        <li class="active"><a href="#">Leadership Practices</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="~/Observation/LeadershipPractices">Leadership Practices</a></li>
+                    } 
+                } 
+                
+            }
+        }
+        
+      </ul>
+  
+       
+
+        @{
+            if (Session["UserID"]  == null)
+            {
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown" id="menuLogin">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Login</a>
+                        <div class="dropdown-menu" style="padding:17px;">
+                            @using (Html.BeginForm("Login","Home"))
+                            {
+                                <input name="username" id="username" placeholder="Username" type="text"> 
+                                <input name="password" id="password" placeholder="Password" type="password"><br>
+                                <input type="submit" id="btnLogin" class="btn" value="Login">
+                            }
+                        </div>
+                    </li>
+                </ul>
+            }
+            else
+            {
+                if (PageData[0] == "Home")
+                {
+                     <ul class="nav navbar-nav navbar-right">
+                        <li id="newCLOB"><a href="~/Observation/NewObservation/">New</a></li>
+                        <li id="rpts"><a href="~/Reports/Index/">Reports</a></li>
+                    </ul>
+                }
+            }
+             
+        }
+ 
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+   

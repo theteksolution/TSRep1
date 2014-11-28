@@ -1,0 +1,54 @@
+﻿@model IEnumerable<CLOB.ViewModels.UserObservationVM>
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    .panel
+    {
+         min-width:auto;
+         width:60%;
+    }
+</style>
+
+<script type="text/javascript">
+
+    /*
+      $(document).ready(function () {
+          // Handle the menu click to get product detail
+          $("#btnLogin").click(function (event) {
+
+              $.getJSON("Home/Login", { Username: "aaaa", Password: "bbbb" },
+                    function (data) {
+                        alert(data.Validated);
+                    }
+                );
+        });
+    });
+
+    */
+</script>
+
+
+@RenderPage("~/Views/Shared/_Menu1.cshtml", "Home")
+<div class="container-fluid">
+<h1>Classroom Observations</h1>
+<br />
+
+
+<br />
+
+
+    <table class="table table-striped">
+    @{
+        foreach(var o in Model)
+        {
+         <tr>
+             <td >@o.ObservationID.ToString()</td>
+             <td>@o.ObservationDateShort </td>
+             <td>@Html.ActionLink("Edit", "BackgroundInformation", "Observation", new { ID = o.ObservationID }, new {@role = "button", @class="btn btn-large"})</td>
+         </tr>  
+        }   
+    }
+        </table>
+</div>

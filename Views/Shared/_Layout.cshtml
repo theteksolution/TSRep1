@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+   @* <meta name="viewport" content="width=device-width" />*@
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/themes/base/css")
+    @Styles.Render("~/Bootstrap/css")
+    @Styles.Render("~/Pickadate/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+  
+      @Scripts.Render("~/bundles/jquery")
+    
+      @Scripts.Render("~/bundles/pickadate")
+    @Scripts.Render("~/bundles/bootstrap")
+    @*@RenderSection("scripts", required: false)*@
+</head>
+<body>
+
+    @RenderBody()
+
+</body>
+</html>
