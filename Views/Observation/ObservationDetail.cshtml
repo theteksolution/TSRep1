@@ -26,7 +26,7 @@
     });
    
 </script>
-<style>
+@*<style>
     .form-control
     {
         min-width:auto;
@@ -36,12 +36,10 @@
     {
         width: 30px;
     }
-</style>
+</style>*@
 @RenderPage("~/Views/Shared/_Menu1.cshtml", "Observation Detail")
 <div class="container-fluid">
 <h2>Observation Detail</h2>
-
-<br />
 
 
 @using (Html.BeginForm())
@@ -49,158 +47,157 @@
     
 @Html.Hidden("ObservationInformationID",Model.ObservationInformationID)
 <br />
-<span>Lesson Event Codes</span>
-<br />
 
+<br />
 <div class="dropdown">
-Class Activity Code
+<b>Class Activity Code</b>
 <br />
 
 @Html.DropDownListFor(m=>m.ClassActivityCode,Model.ClassActivityCodeList)
 
-<br />
-Class Organization Code
+<br /><br />
+<b>Class Organization Code</b>
 <br />
 @Html.DropDownListFor(m=>m.ClassOrganizationCode,Model.ClassOrganizationCodeList)
+<br /><br />
+<b>Student Disengagement Code</b>
 <br />
-Student Disengagement Code
-<br />
-@Html.DropDownListFor(m=>m.StudentDisengagementCode,Model.StudentDisengagementCodeList)
+@Html.DropDownListFor(m=>m.StudentDisengagementCode,Model.StudentDisengagementCodeList)<br /><br />
 </div>
    
 
 <div>
-  GAUGE OR EXPAND
+  <b>GAUGE OR EXPAND</b>
   <div class="container-fluid">
     <div class="row">
-        <div class="col-xs-4">solict</div>
-        <div class="col-xs-3"><span id="pSolicitCount" class="glyphicon glyphicon-plus"></span></div>
-        <div class="col-xs-3"><span id="mSolicitCount" class="glyphicon glyphicon-minus"></span></div>
-        <div class="col-xs-2">@Html.TextBoxFor(m=>m.SolicitCount,new { @readonly = true })</div>
+        <div class="col-xs-6">solict</div>
+        <div class="col-xs-2"><span id="pSolicitCount" class="glyphicon glyphicon-plus"></span></div>
+        <div class="col-xs-2"><span id="mSolicitCount" class="glyphicon glyphicon-minus"></span></div>
+        <div class="col-xs-2">@Html.TextBoxFor(m=>m.SolicitCount,new { @readonly = true, @size = "4" })</div>
     </div>
     <div class="row">
-        <div class="col-xs-4">facts</div> 
-        <div class="col-xs-3"><span id="pFactsCount" class="glyphicon glyphicon-plus"></span></div>
-        <div class="col-xs-3"><span id="mFactsCount" class="glyphicon glyphicon-minus"></span></div>
-        <div class="col-xs-2">@Html.TextBoxFor(m=>m.FactsCount,new { @readonly = true })</div>
+        <div class="col-xs-6">facts</div> 
+        <div class="col-xs-2"><span id="pFactsCount" class="glyphicon glyphicon-plus"></span></div>
+        <div class="col-xs-2"><span id="mFactsCount" class="glyphicon glyphicon-minus"></span></div>
+        <div class="col-xs-2">@Html.TextBoxFor(m=>m.FactsCount,new { @readonly = true, @size = "4" })</div>
     </div>
     <div class="row">
-        <div class="col-xs-4">procedural</div>
-        <div class="col-xs-3"><span id="pProceduralCount" class="glyphicon glyphicon-plus"></span></div>
-        <div class="col-xs-3"><span id="mProceduralCount" class="glyphicon glyphicon-minus"></span></div>
-        <div class="col-xs-2">@Html.TextBoxFor(m=>m.ProceduralCount,new { @readonly = true })</div>
+        <div class="col-xs-6">procedural</div>
+        <div class="col-xs-2"><span id="pProceduralCount" class="glyphicon glyphicon-plus"></span></div>
+        <div class="col-xs-2"><span id="mProceduralCount" class="glyphicon glyphicon-minus"></span></div>
+        <div class="col-xs-2">@Html.TextBoxFor(m=>m.ProceduralCount,new { @readonly = true, @size = "4" })</div>
     </div>
     <div class="row">
-        <div class="col-xs-4">explain</div>
-        <div class="col-xs-3"><span id="pExplainCount" class="glyphicon glyphicon-plus"></span></div>
-        <div class="col-xs-3"><span id="mExplainCount" class="glyphicon glyphicon-minus"></span></div>
-        <div class="col-xs-2">@Html.TextBoxFor(m=>m.ExplainCount,new { @readonly = true } )</div>
+        <div class="col-xs-6">explain</div>
+        <div class="col-xs-2"><span id="pExplainCount" class="glyphicon glyphicon-plus"></span></div>
+        <div class="col-xs-2"><span id="mExplainCount" class="glyphicon glyphicon-minus"></span></div>
+        <div class="col-xs-2">@Html.TextBoxFor(m=>m.ExplainCount,new { @readonly = true, @size = "4" } )</div>
     </div>
     <div class="row">
-        <div class="col-xs-4">apply</div>
-        <div class="col-xs-3"><span id="pApplyCount" class="glyphicon glyphicon-plus"></span></div>
-        <div class="col-xs-3"><span id="mApplyCount" class="glyphicon glyphicon-minus"></span></div>
-        <div class="col-xs-2">@Html.TextBoxFor(m=>m.ApplyCount,new { @readonly = true })</div>
+        <div class="col-xs-6">apply</div>
+        <div class="col-xs-2"><span id="pApplyCount" class="glyphicon glyphicon-plus"></span></div>
+        <div class="col-xs-2"><span id="mApplyCount" class="glyphicon glyphicon-minus"></span></div>
+        <div class="col-xs-2">@Html.TextBoxFor(m=>m.ApplyCount,new { @readonly = true, @size = "4" })</div>
     </div>
      <div class="row">
-        <div class="col-xs-4">meta</div>
-        <div class="col-xs-3"><span id="pMetaCount" class="glyphicon glyphicon-plus"></span></div>
-        <div class="col-xs-3"><span id="mMetaCount" class="glyphicon glyphicon-minus"></span></div>
-        <div class="col-xs-2">@Html.TextBoxFor(m=>m.MetaCount ,new { @readonly = true })</div>
+        <div class="col-xs-6">meta</div>
+        <div class="col-xs-2"><span id="pMetaCount" class="glyphicon glyphicon-plus"></span></div>
+        <div class="col-xs-2"><span id="mMetaCount" class="glyphicon glyphicon-minus"></span></div>
+        <div class="col-xs-2">@Html.TextBoxFor(m=>m.MetaCount ,new { @readonly = true, @size = "4" })</div>
     </div>
 
 </div>
   
-  FEEDBACK 
+  <b>FEEDBACK </b>
 <div class="container-fluid">
      <div class="row">
-        <div class="col-xs-4">acknowledge</div>
-        <div class="col-xs-3"><span id="pAcknowledgeCount" class="glyphicon glyphicon-plus"></span></div>
-        <div class="col-xs-3"><span id="mAcknowledgeCount" class="glyphicon glyphicon-minus"></span></div>
-        <div class="col-xs-2">@Html.TextBoxFor(m=>m.AcknowledgeCount,new { @readonly = true })</div>
+        <div class="col-xs-6">acknowledge</div>
+        <div class="col-xs-2"><span id="pAcknowledgeCount" class="glyphicon glyphicon-plus"></span></div>
+        <div class="col-xs-2"><span id="mAcknowledgeCount" class="glyphicon glyphicon-minus"></span></div>
+        <div class="col-xs-2">@Html.TextBoxFor(m=>m.AcknowledgeCount,new { @readonly = true, @size = "4" })</div>
     </div>
      <div class="row">
-        <div class="col-xs-4">rephrase</div>
-        <div class="col-xs-3"><span id="pRephraseCount" class="glyphicon glyphicon-plus"></span></div>
-        <div class="col-xs-3"><span id="mRephraseCount" class="glyphicon glyphicon-minus"></span></div>
-        <div class="col-xs-2">@Html.TextBoxFor(m=>m.RephraseCount,new { @readonly = true })</div>
+        <div class="col-xs-6">rephrase</div>
+        <div class="col-xs-2"><span id="pRephraseCount" class="glyphicon glyphicon-plus"></span></div>
+        <div class="col-xs-2"><span id="mRephraseCount" class="glyphicon glyphicon-minus"></span></div>
+        <div class="col-xs-2">@Html.TextBoxFor(m=>m.RephraseCount,new { @readonly = true, @size = "4" })</div>
     </div>
      <div class="row">
-        <div class="col-xs-4">correct</div>
-        <div class="col-xs-3"><span id="pCorrectCount" class="glyphicon glyphicon-plus"></span></div>
-        <div class="col-xs-3"><span id="mCorrectCount" class="glyphicon glyphicon-minus"></span></div>
-        <div class="col-xs-2">@Html.TextBoxFor(m=>m.CorrectCount,new { @readonly = true })</div>
+        <div class="col-xs-6">correct</div>
+        <div class="col-xs-2"><span id="pCorrectCount" class="glyphicon glyphicon-plus"></span></div>
+        <div class="col-xs-2"><span id="mCorrectCount" class="glyphicon glyphicon-minus"></span></div>
+        <div class="col-xs-2">@Html.TextBoxFor(m=>m.CorrectCount,new { @readonly = true, @size = "4" })</div>
     </div>
      <div class="row">
-        <div class="col-xs-4">praise</div>
-        <div class="col-xs-3"><span id="pPraiseCount" class="glyphicon glyphicon-plus"></span></div>
-        <div class="col-xs-3"><span id="mPraiseCount" class="glyphicon glyphicon-minus"></span></div>
-        <div class="col-xs-2">@Html.TextBoxFor(m=>m.PraiseCount,new { @readonly = true } )</div>
+        <div class="col-xs-6">praise</div>
+        <div class="col-xs-2"><span id="pPraiseCount" class="glyphicon glyphicon-plus"></span></div>
+        <div class="col-xs-2"><span id="mPraiseCount" class="glyphicon glyphicon-minus"></span></div>
+        <div class="col-xs-2">@Html.TextBoxFor(m=>m.PraiseCount,new { @readonly = true, @size = "4" } )</div>
     </div>
 
 </div>
     
- SIGNPOSTS 
+ <b>SIGNPOSTS</b> 
     <div class="container-fluid">
      <div class="row">
-        <div class="col-xs-4">new and old</div>
-        <div class="col-xs-3"><span id="pNewAndOldCount" class="glyphicon glyphicon-plus"></span></div>
-        <div class="col-xs-3"><span id="mNewAndOldCount" class="glyphicon glyphicon-minus"></span></div>
-        <div class="col-xs-2">@Html.TextBoxFor(m=>m.NewAndOldCount,new { @readonly = true })</div>
+        <div class="col-xs-6">new and old</div>
+        <div class="col-xs-2"><span id="pNewAndOldCount" class="glyphicon glyphicon-plus"></span></div>
+        <div class="col-xs-2"><span id="mNewAndOldCount" class="glyphicon glyphicon-minus"></span></div>
+        <div class="col-xs-2">@Html.TextBoxFor(m=>m.NewAndOldCount,new { @readonly = true, @size = "4" })</div>
     </div>
      <div class="row">
-        <div class="col-xs-4">itinerary</div>
-        <div class="col-xs-3"><span id="pItineraryCount" class="glyphicon glyphicon-plus"></span></div>
-        <div class="col-xs-3"><span id="mItineraryCount" class="glyphicon glyphicon-minus"></span></div>
-        <div class="col-xs-2">@Html.TextBoxFor(m=>m.ItineraryCount,new { @readonly = true } )</div>
+        <div class="col-xs-6">itinerary</div>
+        <div class="col-xs-2"><span id="pItineraryCount" class="glyphicon glyphicon-plus"></span></div>
+        <div class="col-xs-2"><span id="mItineraryCount" class="glyphicon glyphicon-minus"></span></div>
+        <div class="col-xs-2">@Html.TextBoxFor(m=>m.ItineraryCount,new { @readonly = true, @size = "4" } )</div>
     </div>
      <div class="row">
-        <div class="col-xs-4">directions</div>
-        <div class="col-xs-3"><span id="pDirectionsCount" class="glyphicon glyphicon-plus"></span></div>
-        <div class="col-xs-3"><span id="mDirectionsCount" class="glyphicon glyphicon-minus"></span></div>
-        <div class="col-xs-2">@Html.TextBoxFor(m=>m.DirectionsCount,new { @readonly = true } )</div>
+        <div class="col-xs-6">directions</div>
+        <div class="col-xs-2"><span id="pDirectionsCount" class="glyphicon glyphicon-plus"></span></div>
+        <div class="col-xs-2"><span id="mDirectionsCount" class="glyphicon glyphicon-minus"></span></div>
+        <div class="col-xs-2">@Html.TextBoxFor(m=>m.DirectionsCount,new { @readonly = true, @size = "4" } )</div>
     </div>
      <div class="row">
-        <div class="col-xs-4">foreshadow</div>
-        <div class="col-xs-3"><span id="pForeshadowCount" class="glyphicon glyphicon-plus"></span></div>
-        <div class="col-xs-3"><span id="mForeshadowCount" class="glyphicon glyphicon-minus"></span></div>
-        <div class="col-xs-2">@Html.TextBoxFor(m=>m.ForeshadowCount,new { @readonly = true } )</div>
+        <div class="col-xs-6">foreshadow</div>
+        <div class="col-xs-2"><span id="pForeshadowCount" class="glyphicon glyphicon-plus"></span></div>
+        <div class="col-xs-2"><span id="mForeshadowCount" class="glyphicon glyphicon-minus"></span></div>
+        <div class="col-xs-2">@Html.TextBoxFor(m=>m.ForeshadowCount,new { @readonly = true, @size = "4" } )</div>
     </div>
      <div class="row">
-        <div class="col-xs-4">situate</div>
-        <div class="col-xs-3"><span id="pSituateCount" class="glyphicon glyphicon-plus"></span></div>
-        <div class="col-xs-3"><span id="mSituateCount" class="glyphicon glyphicon-minus"></span></div>
-        <div class="col-xs-2">@Html.TextBoxFor(m=>m.SituateCount,new { @readonly = true } )</div>
+        <div class="col-xs-6">situate</div>
+        <div class="col-xs-2"><span id="pSituateCount" class="glyphicon glyphicon-plus"></span></div>
+        <div class="col-xs-2"><span id="mSituateCount" class="glyphicon glyphicon-minus"></span></div>
+        <div class="col-xs-2">@Html.TextBoxFor(m=>m.SituateCount,new { @readonly = true, @size = "4" } )</div>
     </div>
 
 </div>    
  
- PROMPT THINKING AND REDUCE COMPLEXITY
+ <b>PROMPT THINKING AND REDUCE COMPLEXITY</b>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xs-4">give info</div>
-        <div class="col-xs-3"><span id="pGiveInfoCount" class="glyphicon glyphicon-plus"></span></div>
-        <div class="col-xs-3"><span id="mGiveInfoCount" class="glyphicon glyphicon-minus"></span></div>
-        <div class="col-xs-2">@Html.TextBoxFor(m=>m.GiveInfoCount,new { @readonly = true })</div>
+        <div class="col-xs-6">give info</div>
+        <div class="col-xs-2"><span id="pGiveInfoCount" class="glyphicon glyphicon-plus"></span></div>
+        <div class="col-xs-2"><span id="mGiveInfoCount" class="glyphicon glyphicon-minus"></span></div>
+        <div class="col-xs-2">@Html.TextBoxFor(m=>m.GiveInfoCount,new { @readonly = true, @size = "4" })</div>
     </div>
      <div class="row">
-        <div class="col-xs-4">suggest</div>
-        <div class="col-xs-3"><span id="pSuggestCount" class="glyphicon glyphicon-plus"></span></div>
-        <div class="col-xs-3"><span id="mSuggestCount" class="glyphicon glyphicon-minus"></span></div>
-        <div class="col-xs-2">@Html.TextBoxFor(m=>m.SuggestCount,new { @readonly = true })</div>
+        <div class="col-xs-6">suggest</div>
+        <div class="col-xs-2"><span id="pSuggestCount" class="glyphicon glyphicon-plus"></span></div>
+        <div class="col-xs-2"><span id="mSuggestCount" class="glyphicon glyphicon-minus"></span></div>
+        <div class="col-xs-2">@Html.TextBoxFor(m=>m.SuggestCount,new { @readonly = true, @size = "4" })</div>
     </div>
      <div class="row">
-        <div class="col-xs-4">think aloud</div>
-        <div class="col-xs-3"><span id="pThinkAloudCount" class="glyphicon glyphicon-plus"></span></div>
-        <div class="col-xs-3"><span id="mThinkAloudCount" class="glyphicon glyphicon-minus"></span></div>
-        <div class="col-xs-2">@Html.TextBoxFor(m=>m.ThinkAloudCount,new { @readonly = true })</div>
+        <div class="col-xs-6">think aloud</div>
+        <div class="col-xs-2"><span id="pThinkAloudCount" class="glyphicon glyphicon-plus"></span></div>
+        <div class="col-xs-2"><span id="mThinkAloudCount" class="glyphicon glyphicon-minus"></span></div>
+        <div class="col-xs-2">@Html.TextBoxFor(m=>m.ThinkAloudCount,new { @readonly = true, @size = "4" })</div>
     </div>
      
      <div class="row">
-        <div class="col-xs-4">summarize</div>
-        <div class="col-xs-3"><span id="pSummarizeCount" class="glyphicon glyphicon-plus"></span></div>
-        <div class="col-xs-3"><span id="mSummarizeCount" class="glyphicon glyphicon-minus"></span></div>
-        <div class="col-xs-2">@Html.TextBoxFor(m=>m.SummarizeCount,new { @readonly = true })</div>
+        <div class="col-xs-6">summarize</div>
+        <div class="col-xs-2"><span id="pSummarizeCount" class="glyphicon glyphicon-plus"></span></div>
+        <div class="col-xs-2"><span id="mSummarizeCount" class="glyphicon glyphicon-minus"></span></div>
+        <div class="col-xs-2">@Html.TextBoxFor(m=>m.SummarizeCount,new { @readonly = true, @size = "4" })</div>
     </div>
 
 
@@ -210,7 +207,7 @@ Student Disengagement Code
         @Html.TextAreaFor(m => m.Notes, new { @class = "form-control" })
     </div>
 
-<input id="Submit1" class="btn btn-primary" type="submit" value="submit" />
+<input id="Submit1" class="btn btn-primary" type="submit" value="Save" />
 
      <br /><br />
 </div>

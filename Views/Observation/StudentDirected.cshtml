@@ -15,10 +15,10 @@
 <h2>Student Directed</h2>
 @using (Html.BeginForm())
 {
-<br /><br />
+<br />
 @Html.Hidden("POQType", (object) ViewBag.POQType)
 <div class="panel">
-    QUESTIONING / EXPLORATION
+    <b>QUESTIONING / EXPLORATION</b>
     @{
      foreach (var o in Model)
      {
@@ -33,7 +33,7 @@
     }
 
     <br />
-    DESIGN
+    <b>DESIGN</b>
     @{
      foreach (var o in Model)
      {
